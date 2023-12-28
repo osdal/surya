@@ -1,16 +1,89 @@
 %ic {
-	font-family: "icons";
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 [class*="_icon-"] {
-	&:before {
-		@extend %ic;
-		display: block;
-	}
+    &:before {
+        @extend %ic;
+        display: block;
+    }
+}
+
+._icon-phone:before {
+    content: "\e911";
+}
+
+._icon-cart:before {
+    content: "\e90e";
+}
+
+._icon-search:before {
+    content: "\e910";
+}
+
+._icon-linkedin:before {
+    content: "\e907";
+}
+
+._icon-telegram:before {
+    content: "\e90a";
+}
+
+._icon-whatsapp:before {
+    content: "\e90c";
+}
+
+._icon-viber:before {
+    content: "\e90d";
+}
+
+._icon-upwork:before {
+    content: "\e900";
+}
+
+._icon-copyright:before {
+    content: "\e901";
+}
+
+._icon-copyright1:before {
+    content: "\e902";
+}
+
+._icon-email:before {
+    content: "\e903";
+}
+
+._icon-facebook:before {
+    content: "\e904";
+}
+
+._icon-Github-icon:before {
+    content: "\e905";
+}
+
+._icon-_instagram:before {
+    content: "\e906";
+}
+
+._icon-logo-github:before {
+    content: "\e908";
+}
+
+._icon-messenger:before {
+    content: "\e909";
+}
+
+._icon-twitter:before {
+    content: "\e90b";
+}
+
+._icon-youtube:before {
+    content: "\e90f";
 }

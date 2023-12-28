@@ -1,11 +1,11 @@
 //====================================================================================================
-.menu-open {
+html.menu-open {
     .menu__body {
         left: 0;
     }
 }
+
 .header {
-    
 
     &__container {
         display: flex;
@@ -13,11 +13,16 @@
         padding-top: rem(15);
     }
 
-    &__logo {}
 
     @media(max-width: $mobile) {
         & {
             justify-content: space-between;
+        }
+
+        .main-menu-mobile {
+            .menu__body {
+                padding: 0 rem(20);
+            }
         }
 
         &__logo {
@@ -38,18 +43,27 @@
             text-shadow: 2.783px 4.175px 5.566px rgba(0, 0, 0, 0.75);
         }
 
-        .shop {
-            font-size: rem(54);
-        }
-
+        .shop,
         .light-tech {
-            font-size: rem(36);
+            @include adaptiveValue("font-size", 56, 20);
+
+            @media(max-width: 588px) {
+                @include adaptiveValue("font-size", 76, 20);
+            }
         }
 
         &__site-name {
             .shop-menu-block {
                 display: flex;
                 gap: rem(15);
+                align-items: center;
+                justify-content: space-between;
+
+                @media(max-width: 588px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
             }
         }
 
@@ -86,19 +100,54 @@
                 }
 
                 .menu__list {
-                    display: flex;
-                    flex-direction: column;
+                    display: grid;
+                    grid-template-columns: auto;
                     gap: rem(20);
                     margin-bottom: rem(50);
+                    align-self: center;
+                    padding-left: 10%;
+
+                    &>li {
+                        a {
+                            margin-bottom: rem(10);
+                        }
+                    }
+
+                    .sub-menu {
+                        display: none;
+                        left: 10%;
+                        background-color: #f9f9f9;
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                        max-height: 0;
+                        /* Устанавливаем максимальную высоту основного меню */
+                        transition: all 0.1s ease-in-out;
+                        /* Добавляем CSS-транзицию */
+
+                        li {
+                            list-style: disc;
+                        }
+                    }
+
+                    &>li.active {
+                        .sub-menu {
+                            display: block;
+                            // max-height: 100%;
+                            overflow: hidden;
+                            transition: all 1s ease-in-out;
+                        }
+                    }
                 }
 
                 .menu__item {
-                    font-size: rem(26);
+                    position: relative;
 
-                    a {
-                        color: $yellowColor;
+                    .menu__link {
+                        font-size: rem(32);
+                        color: #fff;
                         text-shadow: 2.783px 4.175px 5.566px rgba(255, 221, 1, 0.75);
                     }
+
+
                 }
             }
 
@@ -107,6 +156,12 @@
                     fill: $yellowColor;
                 }
             }
+        }
+    }
+
+    @media(max-width: 588px) {
+        & {
+            margin-bottom: rem(20);
         }
     }
 
@@ -122,12 +177,25 @@
             display: block;
         }
 
-        .shop-menu-block {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    }
 
+    .main-menu-mobile {
+        align-self: start;
+    }
+
+    .block-menu-icons {
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem(15);
+
+        color: $yellowColor;
+
+        a {
+            font-size: rem(25);
+        }
     }
 }
 
@@ -194,4 +262,9 @@
             }
         }
     }
+
+    & {
+        margin-right: 0;
+    }
+
 }
