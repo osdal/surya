@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{
-	"title":"HomePage"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_js.htm',{})
-	</body>
+@@include('html/_head.htm',{
+"title":"HomePage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page main">
+			<div class="main__container">
+				<div class="main__slider swiper">
+					<div class="main__wrapper swiper-wrapper">
+						<div class="main__slide swiper-slide">
+							<img src="@img/Slider.jpg" alt="">
+						</div>
+						<div class="main__slide swiper-slide">
+							<img src="@img/lamp.jpg" alt="">
+						</div>
+						<div class="main__slide swiper-slide">
+							<img src="@img/lamp2.png" alt="">
+						</div>
+					</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+				<div class="manufacturies-block ">
+					<div class="block-manufacturer">
+						<img src="@img/manufacturies/Videx_logo.png" alt="">
+						<div class="menu">
+								@@include('html/menues/_menu_videx.htm',{})
+						</div>
+					</div>
+					<div class="block-manufacturer">
+						<img src="@img/manufacturies/biom_logo.png" alt="">
+						<div class="menu">
+								@@include('html/menues/_menu_biom.htm',{})
+						</div>
+					</div>
+					<div class="block-manufacturer">
+						<img src="@img/manufacturies/Diasha_red.png" alt="">
+						<div class="menu">
+								@@include('html/menues/_menu_diasha.htm',{})
+						</div>
+					</div>
+					<div class="block-manufacturer">
+						<img src="@img/manufacturies/msk_logo.png" alt="">
+						<div class="menu">
+								@@include('html/menues/_menu_msk_electric.htm',{})
+						</div>
+					</div>
+					<div class="block-manufacturer">
+						<img src="@img/manufacturies/Horoz_logo.png" alt="">
+						<div class="menu">
+								@@include('html/menues/_menu_horoz.htm',{})
+						</div>
+					</div>
+					<div class="block-manufacturer">
+						<img src="@img/manufacturies/prolum_logo.webp" alt="">
+						<div class="menu">
+								@@include('html/menues/_menu_prolum.htm',{})
+						</div>
+					</div>
+					<div class="block-manufacturer">
+						<img src="@img/manufacturies/feron_logo.png" alt="">
+						<div class="menu">
+								@@include('html/menues/_menu_feron.htm',{})
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
 </html>

@@ -1,0 +1,27 @@
+.main-menu-mobile {
+    @include mobile-menues();
+}
+
+.img-menu-manufacture {
+    background: $goldColor;
+    box-shadow: 0 0 rem(20) rem(5) $goldColor;
+    border-radius: rem(5);
+    padding: rem(2);
+    
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.manufacturies-block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    margin-bottom: rem(20);
+
+    img {
+        @include adaptiveValue("width", 350, 200);
+        object-fit: contain;
+    }
+}
