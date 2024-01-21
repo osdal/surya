@@ -8,22 +8,27 @@ import { flsModules } from "./modules.js";
 import { menuCount } from './customMenu.js';
 import { menuClicked } from './customMenu.js';
 import { menuBodyWayUp } from './customMenu.js';
+import { menuIconHide } from './customMenu.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     menuCount();
     menuClicked();
     menuBodyWayUp();
+    menuIconHide();
 
     let mobileMenu = document.querySelectorAll('.menu__list>li');
     let subMenu = document.querySelectorAll('.sub-menu');
-    let menuIcon = document.querySelector('.menu__icon');
+    let menuIcon = document.querySelectorAll('.menu__icon');
 
-    menuIcon.addEventListener('click', () => {
-        subMenu.forEach(item => {
-            item.style.maxHeight = 0;
-        });
+    menuIcon.forEach(icon => {
+        icon.addEventListener('click', () => {
+            subMenu.forEach(menu => {
+                menu.style.maxHeight = 0;
+            })
+        })
     });
 
+    addActiveClass(mobileMenu);
     function addActiveClass(menu) {
         menu.forEach(element => {
             element.addEventListener('click', function () {
@@ -46,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    addActiveClass(mobileMenu);
+
 
     function smoothIncreaseMaxHeight(initialValue, interval, subMenu) {
 
@@ -70,23 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }, interval);
     }
 
-    // Пример использования функции
-    // smoothIncreaseMaxHeight(0, 50); // начальное значение 0%, интервал 50 миллисекунд 
-// Находим все ссылки на странице
-var links = document.querySelectorAll('.menu__item a');
+    // Находим все ссылки на странице
+    var links = document.querySelectorAll('.menu__item a');
 
-// Добавляем обработчик события для каждой ссылки
-links.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-        // Предотвращаем стандартное действие (переход по ссылке)
-        event.preventDefault();
+    // Добавляем обработчик события для каждой ссылки
+    links.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            // Предотвращаем стандартное действие (переход по ссылке)
+            event.preventDefault();
 
-        // Ваш код, который будет выполняться вместо стандартного действия
-        // Например, вы можете добавить свою логику обработки клика здесь
+            // Ваш код, который будет выполняться вместо стандартного действия
+            // Например, вы можете добавить свою логику обработки клика здесь
 
-        // Если вы хотите все-таки перейти по ссылке после выполнения своего кода, вы можете использовать следующую строку
-        // window.location.href = link.href;
+            // Если вы хотите все-таки перейти по ссылке после выполнения своего кода, вы можете использовать следующую строку
+            // window.location.href = link.href;
+        });
     });
-});
 
 })
